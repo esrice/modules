@@ -28,6 +28,7 @@ workflow test_cellranger_count {
 
     CELLRANGER_COUNT(
         input,
-        CELLRANGER_MKREF.out.reference
+        CELLRANGER_MKREF.out.reference,
+        false
     )
 }

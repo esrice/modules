@@ -10,6 +10,7 @@ process CELLRANGER_COUNT {
     input:
     tuple val(meta), path(reads)
     path  reference
+    val   include_introns
 
     output:
     tuple val(meta), path("sample-${meta.gem}/outs/*"), emit: outs
@@ -22,6 +23,8 @@ process CELLRANGER_COUNT {
     def args = task.ext.args ?: ''
     def sample_arg = meta.samples.unique().join(",")
     def reference_name = reference.name
+
+    if (include_introns) args += ' --include-introns'
     """
     cellranger \\
         count \\

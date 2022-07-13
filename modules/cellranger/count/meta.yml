@@ -26,6 +26,9 @@ input:
   - reference:
       type: folder
       description: Folder containing all the reference indices needed by Cell Ranger
+  - include_introns:
+      type: boolean
+      description: set to true to enable using the --include-introns flag in CellRanger. Useful for libraries created with nuclei prep
 output:
   - outs:
       type: file
