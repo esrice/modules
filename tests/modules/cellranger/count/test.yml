@@ -63,3 +63,22 @@
     - path: output/cellranger/sample-123/outs/raw_feature_bc_matrix/matrix.mtx.gz
       md5sum: bdce94a51f16e22d40301724080b76ee
     - path: output/cellranger/sample-123/outs/web_summary.html
+- name: cellranger count test_cellranger_count_nucleus
+  command: nextflow run ./tests/modules/cellranger/count -entry test_cellranger_count_nucleus -c ./tests/config/nextflow.config  -c ./tests/modules/cellranger/count/nextflow.config
+  tags:
+    - cellranger/count
+    - cellranger
+  files:
+    - path: output/cellranger/sample-123/outs/filtered_feature_bc_matrix.h5
+    - path: output/cellranger/sample-123/outs/filtered_feature_bc_matrix/barcodes.tsv.gz
+    - path: output/cellranger/sample-123/outs/filtered_feature_bc_matrix/features.tsv.gz
+    - path: output/cellranger/sample-123/outs/filtered_feature_bc_matrix/matrix.mtx.gz
+    - path: output/cellranger/sample-123/outs/metrics_summary.csv
+    - path: output/cellranger/sample-123/outs/molecule_info.h5
+    - path: output/cellranger/sample-123/outs/possorted_genome_bam.bam
+    - path: output/cellranger/sample-123/outs/possorted_genome_bam.bam.bai
+    - path: output/cellranger/sample-123/outs/raw_feature_bc_matrix.h5
+    - path: output/cellranger/sample-123/outs/raw_feature_bc_matrix/barcodes.tsv.gz
+    - path: output/cellranger/sample-123/outs/raw_feature_bc_matrix/features.tsv.gz
+    - path: output/cellranger/sample-123/outs/raw_feature_bc_matrix/matrix.mtx.gz
+    - path: output/cellranger/sample-123/outs/web_summary.html
