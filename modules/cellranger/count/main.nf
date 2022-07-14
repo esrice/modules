@@ -24,7 +24,7 @@ process CELLRANGER_COUNT {
     def sample_arg = meta.samples.unique().join(",")
     def reference_name = reference.name
 
-    if (include_introns) args += ' --include-introns'
+    if (include_introns) args += ' --include-introns true'
     """
     cellranger \\
         count \\
